@@ -20,7 +20,7 @@ def make_request():
 
     # Convertir de JSON a estrucutura de datos
     all_tasks = response_tasks.json()
-    username = response_user.json().get('name')
+    username = response_user.json().get('username')
     user_id = response_user.json().get('id')
 
     # Archivo x.csv
