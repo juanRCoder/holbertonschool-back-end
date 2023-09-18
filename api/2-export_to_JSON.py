@@ -23,15 +23,16 @@ def make_request():
     username = response_user.json().get('username')
     user_id = response_user.json().get('id')
 
-    data = { user_id: [
-        {
-            "task": task.get('title'),
-            "completed": task.get('completed'),
-            "username": username
+    data = {
+            user_id: [
+                {
+                    "task": task.get('title'),
+                    "completed": task.get('completed'),
+                    "username": username
             }
-        for task in all_tasks
+            for task in all_tasks
         ]
-        }
+    }
 
     # Archivo x.json
     file_json = f"{user_id}.json"
