@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+    This module makes a request to an API to extract specific data
+"""
 import requests
 from sys import argv
 
