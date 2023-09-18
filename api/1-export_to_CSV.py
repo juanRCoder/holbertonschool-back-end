@@ -2,9 +2,9 @@
 """
 This module makes a request to an API to extract specific data
 """
+import csv
 import requests
 from sys import argv
-import csv
 
 
 url = 'https://jsonplaceholder.typicode.com'
@@ -26,14 +26,13 @@ def make_request():
     # Archivo x.csv
     csv_filename = f"{user_id}.csv"
 
-    # Configuracion del archivo x.csv 
+    # Configuracion del archivo x.csv
     with open(csv_filename, 'w') as file:
         write = csv.writer(
                 file,
                 delimiter=',',
                 quotechar='"',
                 quoting=csv.QUOTE_ALL)
-
 
         for task in all_tasks:
             task_status = task.get('completed')
