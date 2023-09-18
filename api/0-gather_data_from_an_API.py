@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    This module makes a request to an API to extract specific data
+This module makes a request to an API to extract specific data
 """
 import requests
 from sys import argv
@@ -27,9 +27,11 @@ def make_request():
         if task.get('completed'):
             completed_tasks.append(task)
 
-    text = "is done with tasks"
-    completed = len(completed_tasks)
-    print(f"Employee {username} {text} ({completed}/{len(all_task)}):")
+    print("Employee {} is done with tasks({}/{}):".format(
+        username,
+        len(completed_tasks),
+        len(all_task))
+        )
 
     for task in completed_tasks:
         print(f"\t {task.get('title')}")
