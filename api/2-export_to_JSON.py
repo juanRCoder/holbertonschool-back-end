@@ -29,10 +29,10 @@ def make_request():
                     "task": task.get('title'),
                     "completed": task.get('completed'),
                     "username": username
+                    }
+                for task in all_tasks
+                ]
             }
-            for task in all_tasks
-        ]
-    }
 
     # Archivo x.json
     file_json = f"{user_id}.json"
