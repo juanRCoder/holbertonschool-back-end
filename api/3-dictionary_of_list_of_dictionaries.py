@@ -8,9 +8,6 @@ import requests
 
 url = 'https://jsonplaceholder.typicode.com'
 
-# Solicitud hacia la API
-response = requests.get(url)
-
 
 def make_request():
     # Hacer las solicitudes para obtener los datos del usuarios de la API
@@ -23,10 +20,10 @@ def make_request():
         user_id = user['id']
         username = user['username']
 
-        #Hacer una solicitud para obtener las tareas de un usuario x
-        response_tasks = requests.get(f"{url}/todos?Id={user_id}")
+        # Hacer una solicitud para obtener las tareas de un usuario x
+        response_tasks = requests.get(f"{url}/todos?userId={user_id}")
         tasks = response_tasks.json()
-    
+
         data = [
                 {
                     "username": username,
@@ -36,7 +33,7 @@ def make_request():
                 for task in tasks
                 ]
 
-        #almacenar todo los datos en formato diccionario
+        # Almacenar todo los datos en formato diccionario
         all_tasks[user_id] = data
 
     # Archivo x.json
