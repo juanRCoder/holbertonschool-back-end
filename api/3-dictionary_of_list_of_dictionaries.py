@@ -11,7 +11,7 @@ url = 'https://jsonplaceholder.typicode.com'
 
 def make_request():
     # Hacer las solicitudes para obtener los datos del usuarios de la API
-    response_user = requests.get(f"{url}/users/")
+    response_user = requests.get(f"{url}/users")
     users = response_user.json()
 
     all_tasks = {}
@@ -36,12 +36,12 @@ def make_request():
         # Almacenar todo los datos en formato diccionario
         all_tasks[user_id] = data
 
-    # Archivo x.json
-    file_json = f"todo_all_employees.json"
+    # Archivo all.json
+    file_json = "todo_all_employees.json"
 
     # Escribir todos los datos obtenidos en el archivo file_json serializados
-    with open(file_json, 'w') as file:
-        json.dump(all_tasks, file)
+    with open(file_json, 'w') as files:
+        json.dump(all_tasks, files)
 
 
 if __name__ == '__main__':
