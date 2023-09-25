@@ -8,9 +8,6 @@ from sys import argv
 
 url = 'https://jsonplaceholder.typicode.com'
 
-# Acceso a la API
-response = requests.get(url)
-
 
 def make_request():
     # Hacer las solicitudes para obtener los datos de la API
