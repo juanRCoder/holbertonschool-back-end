@@ -3,9 +3,9 @@
 import requests
 from sys import argv
 
-if __name__ == "__main__":
-    API = 'https://jsonplaceholder.typicode.com'
+API = 'https://jsonplaceholder.typicode.com'
 
+if __name__ == "__main__":
     # Obtener informacion de un empleado en particular
     RES_TASK = requests.get(f'{API}/todos?userId={argv[1]}')
     RES_USERS = requests.get(f'{API}/users/{argv[1]}')
