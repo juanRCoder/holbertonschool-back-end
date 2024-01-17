@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Module that display data of the employee """
 import requests
 from sys import argv
 
@@ -16,13 +17,13 @@ if __name__ == "__main__":
     completed = []
     # iteramos las task completadas y lo guardamos en completed.
     for task in tasks:
-        if task['completed']:
+        if task.get('completed'):
             completed.append(task)
 
     # Empleado y cantidad de tareas completadas y total
-    print(f"Employee {users['name']} is done with \
+    print(f"Employee {users.get('name')} is done with \
 tasks({len(completed)}/{len(tasks)}):")
 
     # Iteramos todas las tareas completadas.
     for t in completed:
-        print(f"\t {t['title']}")
+        print(f"\t {t.get('title')}")
