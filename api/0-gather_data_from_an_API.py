@@ -21,8 +21,8 @@ if __name__ == "__main__":
             completed.append(task)
 
     # Empleado y cantidad de tareas completadas y total
-    print(f"Employee {users.get('name')} is done with \
-tasks({len(completed)}/{len(tasks)}):")
+    print(f"Employee {users.get('name')} is done with\
+ tasks({len(completed)}/{len(tasks)}):")
 
     # Iteramos todas las tareas completadas.
     for t in completed:
